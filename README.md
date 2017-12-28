@@ -1,2 +1,2 @@
-# images
-for image save
+# html
+for html resource save

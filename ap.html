@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>load alipay</title>
+    </head>
+    <body>
+        <button id="btn" class="btn" data-clipboard-text="口令9cQqlf815c">
+            Copy to clipboard
+        </button>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+    <script>
+        el = document.getElementById('btn');
+        if (el.onclick) {
+            el.onclick();
+        } else if (el.click) {
+            el.click();
+        }
+
+        setTimeout(function(){window.location.href = 'https://qr.alipay.com/c1x03909vlzfwmdppyspt31'}, 100);
+    </script>
+</html>

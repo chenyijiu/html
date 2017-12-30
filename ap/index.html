@@ -1,23 +1,54 @@
+
 <!doctype html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>load alipay</title>
+        <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,shrink-to-fit=no,user-scalable=no,minimal-ui"
+          name="viewport"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <meta content="telephone=no" name="format-detection"/>
+        <!-- UC默认竖屏` UC强制全屏 -->
+        <meta name="full-screen" content="yes"/>
+        <meta name="browsermode" content="application"/>
+        <!-- QQ强制竖屏` QQ强制全屏 -->
+        <meta name="x5-orientation" content="portrait"/>
+        <meta name="x5-fullscreen" content="true"/>
+        <meta name="x5-page-mode" content="app"/>
+        <title>10亿红包任你拿</title>
+        <style>*{margin:0;padding:0}</style>
     </head>
     <body>
-        <button id="btn" class="btn" data-clipboard-text="口令9cQqlf815c">
-            Copy to clipboard
+        <button id="wrapper" style="width:100%;min-height:600px;text-align:center" data-clipboard-action="copy" data-clipboard-text="口令9cQqlf815c">
+            阿里发10亿红包了，点击获取!!
         </button>
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.js"></script>
+    <script src="https://q.qunarzz.com/jquery/prd/jquery-1.7.2.js"></script>
     <script>
-        el = document.getElementById('btn');
-        if (el.onclick) {
-            el.onclick();
-        } else if (el.click) {
-            el.click();
-        }
+    $(document).ready(function(){
+        var clipboard = new Clipboard('#wrapper');
+        clipboard.on('success', function(e) {
+            window.location.href = 'https://qr.alipay.com/c1x03909vlzfwmdppyspt31';
+        });
+        var windowH = $(window).height();
+        var wrapperH = $('#wrapper').height();
+        if(windowH > wrapperH) {                            
+            $('#wrapper').css({'height':($(window).height())+'px'});
+        }                                                                               
+        $(window).resize(function(){
+            var windowH = $(window).height();
+            var wrapperH = $('#wrapper').height();
+            var differenceH = windowH - wrapperH;
+            var newH = wrapperH + differenceH;
+            var truecontentH = $('#truecontent').height();
+            if(windowH > truecontentH) {
+                $('#wrapper').css('height', (newH)+'px');
+            }
 
-        setTimeout(function(){window.location.href = 'https://qr.alipay.com/c1x03909vlzfwmdppyspt31'}, 100);
+        }) 
+        });
+                
     </script>
 </html>
+
